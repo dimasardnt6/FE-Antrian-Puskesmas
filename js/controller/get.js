@@ -45,7 +45,7 @@ export function isiTableDokter(results) {
 }
 function isiRow4(value) {
     let content =
-         isiTabel4.replace("#NAMADOKTER#", value.kode_poliklinik)
-            .replace("#SPESIALIS#", value.nama_poliklinik)
+         isiTabel4.replace("#NAMADOKTER#", value.nama_dokter)
+            .replace("#SPESIALIS#", value.spesialisasi)
         addInner("iniTabel4", content);
 }

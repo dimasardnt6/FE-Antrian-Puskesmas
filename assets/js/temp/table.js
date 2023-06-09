@@ -9,7 +9,7 @@ export let isiTabel =
         </div>
     </div>
     </td>
-    <td>
+    <td class="align-middle text-center text-sm>
     <div class="d-flex px-2 py-1">
         <div class="d-flex flex-column justify-content-center">
         <h5 class="mb-0 text-sm">#NAMAPASIEN#</h5>

@@ -1,17 +1,18 @@
 export let isiTabel = 
 `
     <tr>
-    <td>
+    <>
     <div class="d-flex px-2 py-1">
         <div class="d-flex flex-column justify-content-center">
         <h5 class="mb-0 text-sm">#KODEPOLI#</h5>
         <h5 class="mb-0 text-sm">#NAMAPOLI#</h5>
         </div>
     </div>
-    </td>
-    <div class="d-flex flex-column justify-content-center">
-    <h5 class="mb-0 text-sm">#NAMAPASIEN#</h5>
-    <h5 class="mb-0 text-sm">#NOKTP#</h5>
+    <div class="d-flex px-2 py-1">
+        <div class="d-flex flex-column justify-content-center">
+        <h5 class="mb-0 text-sm">#NAMAPASIEN#</h5>
+        <h5 class="mb-0 text-sm">#NOKTP#</h5>
+        </div>
     </div>
     <td class="align-middle text-center text-sm">
     <h5 class="mb-0 text-sm">#NOANTRIAN#</h5>

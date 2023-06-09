@@ -50,7 +50,7 @@ export let isiTabel2 =
         <p class="mb-0 font-semibold leading-tight text-xs">#ALAMAT#</p>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <p class="mb-0 font-semibold leading-tight text-xs">#NOTELEPON</p>
+        <p class="mb-0 font-semibold leading-tight text-xs">#NOTELEPON#</p>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
         <p class="mb-0 font-semibold leading-tight text-xs">#LAHIR#</p>

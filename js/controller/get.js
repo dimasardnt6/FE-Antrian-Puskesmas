@@ -22,7 +22,7 @@ function isiRow2(value) {
     let content =
          isiTabel2.replace("#NAMAPASIEN#", value.nama_pasien)
             .replace("#NOKTP#", value.nomor_ktp)
-            .replace("#ALAMAT#", value.nomor_ktp)
+            .replace("#ALAMAT#", value.alamat)
             .replace("#NOHP#", value.nomor_telepon)
             .replace("#LAHIR#", value.tanggal_lahir)
             .replace("#GENDER#", value.jenis_kelamin)

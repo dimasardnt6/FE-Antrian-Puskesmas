@@ -1,0 +1,1 @@
+export let urlAPIAntrian = "https://dimasardnt6-ulbi.herokuapp.com/all-antrian";

@@ -42,7 +42,7 @@ export let isiTabel2 =
         </div>
             <div class="flex flex-col justify-center">
                 <h6 class="mb-0 leading-normal text-sm">#NAMAPASIEN#</h6>
-                <p class="mb-0 leading-tight text-xs text-slate-400">#NOMORKTP#</p>
+                <p class="mb-0 leading-tight text-xs text-slate-400">#NOKTP#</p>
             </div>
         </div>
     </td>
@@ -50,7 +50,7 @@ export let isiTabel2 =
         <p class="mb-0 font-semibold leading-tight text-xs">#ALAMAT#</p>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <p class="mb-0 font-semibold leading-tight text-xs">#NOHP</p>
+        <p class="mb-0 font-semibold leading-tight text-xs">#NOTELEPON</p>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
         <p class="mb-0 font-semibold leading-tight text-xs">#LAHIR#</p>

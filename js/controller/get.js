@@ -23,7 +23,7 @@ function isiRow2(value) {
          isiTabel2.replace("#NAMAPASIEN#", value.nama_pasien)
             .replace("#NOKTP#", value.nomor_ktp)
             .replace("#ALAMAT#", value.alamat)
-            .replace("#NOHP#", value.nomor_telepon)
+            .replace("#NOTELEPON#", value.nomor_telepon)
             .replace("#LAHIR#", value.tanggal_lahir)
             .replace("#GENDER#", value.jenis_kelamin)
         addInner("iniTabel2", content);

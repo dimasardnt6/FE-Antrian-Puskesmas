@@ -1,5 +1,5 @@
 import { addInner } from "https://bukulapak.github.io/element/process.js";
-import { isiTabel,isiTabel2 } from "../temp/table.js";
+import { isiTabel,isiTabel2,isiTabel3 } from "../temp/table.js";
 export function isiTableAntrian(results) {
     results.forEach(isiRow);
 }
@@ -27,4 +27,15 @@ function isiRow2(value) {
             .replace("#LAHIR#", value.tanggal_lahir)
             .replace("#GENDER#", value.jenis_kelamin)
         addInner("iniTabel2", content);
+}
+
+export function isiTablePoliklinik(results) {
+    results.forEach(isiRow3);
+}
+function isiRow3(value) {
+    let content =
+         isiTabel3.replace("#KODEPOLI#", value.kode_poliklinik)
+            .replace("#NAMAPOLI#", value.nama_poliklinik)
+            .replace("#DESKRIPSI#", value.deskripsi)
+        addInner("iniTabel3", content);
 }

@@ -36,9 +36,9 @@ function isiRow3(value) {
     let content =
          isiTabel3.replace("#KODEPOLI#", value.kode_poliklinik)
             .replace("#NAMAPOLI#", value.nama_poliklinik)
-            .replace("#DESKRIPSI#", value.deskripsi)
             .replace("#IDEDIT#", value._id)
             .replace("#IDHAPUS#", value._id)
+            .replace("#DESKRIPSI#", value.deskripsi)
         addInner("iniTabel3", content);
 }
 

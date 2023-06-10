@@ -1,4 +1,4 @@
-function deletePoli(IDHAPUS) {
+function deleteData(IDHAPUS) {
     var poliklinikId = IDHAPUS;
     var target_url = "https://dimasardnt6-ulbi.herokuapp.com/delete-poliklinik/" + poliklinikId;
 

@@ -8,7 +8,7 @@ function pushData(){
     let data = {
         kode_poliklinik: getValue("kode_poliklinik"),
         nama_poliklinik: getValue("nama_poliklinik"),
-        deskripsi: getValue("deskripsi"),
+        deskripsi: getValue("deskripsi")
     }
     postData(urlPOST, data, AmbilResponse);
 

@@ -7,8 +7,11 @@ function pushData(){
 
     let data = {
         nama_dokter: getValue("nama_dokter"),
-        spesialis: getValue("spesialis"),
-        poliklinik: getValue("pliklinik")
+        spesialisasi: getValue("spesialisasi"),
+        poli: {
+            kode_poliklinik: getValue("kode_poliklinik"),
+            nama_poliklinik: getValue("nama_poliklinik")
+        }   
     }
     postData(urlPOST, data, AmbilResponse);
 

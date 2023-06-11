@@ -1,7 +1,7 @@
 export function isiData(results) {  
     const inputMapping = [
       { id: 'nama_dokter', path: 'nama_dokter' },
-      { id: 'spesialis', path: 'spesialis' },
+      { id: 'spesialisasi', path: 'spesialisasi' },
       { id: 'kode_poliklinik', path: 'poli.kode_poliklinik' },
       { id: 'nama_poliklinik', path: 'poli.nama_poliklinik' },
     ];

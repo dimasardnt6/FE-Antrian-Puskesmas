@@ -1,16 +1,19 @@
-import { postData } from "https://bukulapak.github.io/api/process.js";
+import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOST, AmbilResponse} from "../config/url_post-dokter.js";
+import { urlPUT, AmbilResponse} from "../config/url_put-dokter.js";
 
 
 function pushData(){
 
     let data = {
         nama_dokter: getValue("nama_dokter"),
-        spesialis: getValue("nspesialis"),
-        poliklinik: getValue("poliklinik")
+        spesialisasi: getValue("spesialisasi"),
+        poli: {
+            kode_poliklinik: getValue("kode_poliklinik"),
+            nama_poliklinik: getValue("nama_poliklinik")
+        } 
     }
-    postData(urlPOST, data, AmbilResponse);
+    putData(urlPUT, data, AmbilResponse);
 
 }
 

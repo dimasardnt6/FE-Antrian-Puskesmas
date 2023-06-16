@@ -11,7 +11,7 @@ function pushData(){
             no_ktp: getValue("no_ktp")
         },
         alamat: getValue("alamat"),
-        nomor_telepon: getValue("nomor_telepon"),
+        no_telepon: getValue("no_telepon"),
         lahir: getValue("lahir"),
         gender: getValue("gender"),   
     }

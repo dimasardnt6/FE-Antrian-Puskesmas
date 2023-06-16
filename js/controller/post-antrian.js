@@ -12,18 +12,11 @@ function pushData(){
             },
             identitas_pasien: {
             nama_pasien: getValue("nama_pasien"),
-<<<<<<< HEAD
             nomor_ktp: getValue("nomor_ktp")
-        },                
-        nomor_antrian: getValue("nomor_antrian"),
-        status_antrian: getValue("status_antrian"),
-                
-=======
-            nomor_ktp: getValue("nomor_ktp"),
-            },
+            },                
             nomor_antrian: parseInt(getValue("nomor_antrian")),
             status_antrian: getValue("status_antrian"),
->>>>>>> 926ea7cc686ecc719006acbc5ce11b9f0f867a25
+
     }
     postData(urlPOST, data, AmbilResponse);
 

@@ -11,6 +11,8 @@ function isiRow(value) {
             .replace("#NOKTP#", value.identitas_pasien.nomor_ktp)
             .replace("#NOANTRIAN#", value.nomor_antrian)
             .replace("#TANGGALDAFTAR#", value.tanggal_pendaftaran)
+            .replace("#IDEDIT#", value._id)
+            .replace("#IDHAPUS#", value._id)
             .replace("#STATUS#", value.status_antrian)
         addInner("iniTabel", content);
 }

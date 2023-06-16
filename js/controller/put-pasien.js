@@ -6,14 +6,12 @@ import { urlPUT, AmbilResponse} from "../config/url_put-pasien.js";
 function pushData(){
 
     let data = {
-        pasien: {
-            nama_pasien: getValue("nama_pasien"),
-            no_ktp: getValue("no_ktp")
-        },
+        nama_pasien: getValue("nama_pasien"),
+        nomor_ktp: getValue("nomor_ktp"),
         alamat: getValue("alamat"),
         nomor_telepon: getValue("nomor_telepon"),
-        lahir: getValue("lahir"),
-        gender: getValue("gender"),   
+        tanggal_lahir: getValue("tanggal_lahir"),
+        jenis_kelamin: getValue("jenis_kelamin"),    
     }
     putData(urlPUT, data, AmbilResponse);
 

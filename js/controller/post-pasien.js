@@ -6,14 +6,13 @@ import { urlPOST, AmbilResponse} from "../config/url_post-pasien.js";
 function pushData(){
 
     let data = {
-        pasien: {
-            nama_pasien: getValue("nama_pasien"),
-            no_ktp: getValue("no_ktp")
-        },
+        
+        nama_pasien: getValue("nama_pasien"),
+        nomor_ktp: getValue("nomor_ktp"),
         alamat: getValue("alamat"),
-        no_telepon: getValue("no_telepon"),
-        lahir: getValue("lahir"),
-        gender: getValue("gender"),   
+        nomor_telepon: getValue("nomor_telepon"),
+        tanggal_lahir: getValue("tanggal_lahir"),
+        jenis_kelamin: getValue("jenis_kelamin"),   
     }
     postData(urlPOST, data, AmbilResponse);
 

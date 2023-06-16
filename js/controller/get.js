@@ -26,6 +26,8 @@ function isiRow2(value) {
             .replace("#NOTELEPON#", value.nomor_telepon)
             .replace("#LAHIR#", value.tanggal_lahir)
             .replace("#GENDER#", value.jenis_kelamin)
+            .replace("#IDEDIT#", value._id)
+            .replace("#IDHAPUS#", value._id)
         addInner("iniTabel2", content);
 }
 

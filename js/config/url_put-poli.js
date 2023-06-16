@@ -6,5 +6,5 @@ export let urlPUT = "https://dimasardnt6-ulbi.herokuapp.com/upd-poliklinik/" + p
 export function AmbilResponse(result) {
     console.log(result);
     alert(result.message);
-    window.location.reload();
+    window.location.href = "tabel-poliklinik.html";
 }

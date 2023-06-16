@@ -6,5 +6,5 @@ export let urlPUT = "https://dimasardnt6-ulbi.herokuapp.com/upd-pasien/" + pasie
 export function AmbilResponse(result) {
     console.log(result);
     alert(result.message);
-    window.location.reload();
+    window.location.href = "tabel-pasien.html";
 }

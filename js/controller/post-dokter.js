@@ -11,26 +11,60 @@ function pushData(){
     let namapoliValue = getValue("nama_poliklinik");
 
     // form validation
-    if (namadokterValue === "" && spesialisasiValue === "" && kodepoliValue === "" && namapoliValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Data tidak boleh kosong !</div>";
-        return;
-    }
-    if (namadokterValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nama Dokter tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (spesialisasiValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Spesialisasi tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (kodepoliValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Kode Poliklinik tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (namapoliValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nama Poliklinik tidak boleh kosong !</div>";
-        cek = false;
-    }
+        if (namadokterValue === "" && spesialisasiValue === "" && kodepoliValue === "" && namapoliValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Data tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            return;
+        }
+        
+        if (namadokterValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Nama Dokter tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (spesialisasiValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Spesialisasi tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (kodepoliValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Kode Poliklinik tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (namapoliValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Nama Poliklinik tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
 
     let data = {
         nama_dokter: namadokterValue,

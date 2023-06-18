@@ -13,30 +13,82 @@ function pushData(){
     let statusantrianValue = getValue("status_antrian");
 
    // Form validation
-    if (kodepoliklinikValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Kode Poliklinik tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (namapoliklinikValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nama Poliklinik tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (namapasienValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nama Pasien tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (nomorktpValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nomor KTP tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (nomorantrianValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nomor Antrian tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (statusantrianValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Status Antrian tidak boleh kosong !</div>";
-        cek = false;
-    }
+   if (kodepoliklinikValue === "" && namapoliklinikValue === "" && namapasienValue === "" && nomorktpValue === "" && nomorantrianValue === "" && statusantrianValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Data tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    return;
+}
+
+if (kodepoliklinikValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Kode Poliklinik tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (namapoliklinikValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nama Poliklinik tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (namapasienValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nama Pasien tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (nomorktpValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nomor KTP tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (nomorantrianValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nomor Antrian tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (statusantrianValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Status Antrian tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}  
 
     let data = {
         kode_poliklinik: kodepoliklinikValue,

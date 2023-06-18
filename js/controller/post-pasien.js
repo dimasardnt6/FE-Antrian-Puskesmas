@@ -11,30 +11,72 @@ function pushData(){
     let jeniskelaminValue = getValue("jenis_kelamin");
 
      // form validation
-     if (namapasienValue === "" && nomorktpValue === "" && alamatValue === "" && nomorteleponValue === "" && tanggallahirValue === "" && jeniskelaminValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Data tidak boleh kosong !</div>";
-        return;
-    }
-    if (nomorktpValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nomor KTP tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (alamatValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Alamat tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (nomorteleponValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nomor Telepon tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (tanggallahirValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Tanggal Lahir tidak boleh kosong !</div>";
-        cek = false;
-    }
-    if (jeniskelaminValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Jenis Kelamin tidak boleh kosong !</div>";
-        cek = false;
-    }
+        if (namapasienValue === "" && nomorktpValue === "" && alamatValue === "" && nomorteleponValue === "" && tanggallahirValue === "" && jeniskelaminValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Data tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            return;
+        }
+        
+        if (nomorktpValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Nomor KTP tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (alamatValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Alamat tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (nomorteleponValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Nomor Telepon tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (tanggallahirValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Tanggal Lahir tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
+        if (jeniskelaminValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Jenis Kelamin tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
+        }
+        
 
     let data = {    
         nama_pasien: namapasienValue,

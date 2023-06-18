@@ -9,19 +9,50 @@ function pushData(){
     let namapoliValue = getValue("nama_poliklinik");
     let deskripsiValue = getValue("deskripsi");
 
-     // Form validation
+     // form validation
+     if (kodepoliValue === "" && namapoliValue === "" && deskripsiValue === "") {
+        Swal.fire({
+        icon: 'error',
+        title: 'Data tidak boleh kosong!',
+        text: '',
+        showConfirmButton: false,
+        timer: 2000
+        });
+        return;
+    }
+    
     if (kodepoliValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Kode Poliklinik tidak boleh kosong !</div>";
+        Swal.fire({
+        icon: 'error',
+        title: 'Kode Poliklinik tidak boleh kosong!',
+        text: '',
+        showConfirmButton: false,
+        timer: 2000
+        });
         cek = false;
     }
+    
     if (namapoliValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Nama Poliklinik tidak boleh kosong !</div>";
+        Swal.fire({
+        icon: 'error',
+        title: 'Nama Poliklinik tidak boleh kosong!',
+        text: '',
+        showConfirmButton: false,
+        timer: 2000
+        });
         cek = false;
     }
+    
     if (deskripsiValue === "") {
-        document.getElementById("hasil").innerHTML = "<div alert class='text-center relative w-full p-4 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500 border-fuchsia-300'>Deskripsi tidak boleh kosong !</div>";
+        Swal.fire({
+        icon: 'error',
+        title: 'Deskripsi tidak boleh kosong!',
+        text: '',
+        showConfirmButton: false,
+        timer: 2000
+        });
         cek = false;
-    }
+    }      
 
     let data = {
         kode_poliklinik: kodepoliValue,

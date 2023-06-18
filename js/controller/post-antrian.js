@@ -12,7 +12,7 @@ function pushData(){
             },
             identitas_pasien: {
             nama_pasien: getValue("nama_pasien"),
-            nomor_ktp: getValue("nomor_ktp")
+            nomor_ktp: getValue("nomor_ktp"),
             },                
             nomor_antrian: parseInt(getValue("nomor_antrian")),
             status_antrian: getValue("status_antrian"),

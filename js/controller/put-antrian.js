@@ -87,17 +87,6 @@ if (nomorktpValue === "") {
     cek = false;
 }
 
-if (nomorantrianValue === "") {
-    Swal.fire({
-    icon: 'error',
-    title: 'Nomor Antrian tidak boleh kosong!',
-    text: '',
-    showConfirmButton: false,
-    timer: 2000
-    });
-    cek = false;
-}
-
 if (statusantrianValue === "") {
     Swal.fire({
     icon: 'error',

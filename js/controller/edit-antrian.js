@@ -4,6 +4,7 @@ export function isiData(results) {
       { id: 'nama_poliklinik', path: 'poli.nama_poliklinik' },
       { id: 'nama_pasien', path: 'identitas_pasien.nama_pasien' },
       { id: 'nomor_ktp', path: 'identitas_pasien.nomor_ktp' },
+      { id: 'nomor_telepon', path: 'identitas_pasien.nomor_telepon' },
       { id: 'nomor_antrian', path: 'nomor_antrian' },
       { id: 'status_antrian', path: 'status_antrian' },
     ];

@@ -63,17 +63,6 @@ function pushData(){
             });
             cek = false;
         }
-        
-        if (namapoliValue === "") {
-            Swal.fire({
-            icon: 'error',
-            title: 'Nama Poliklinik tidak boleh kosong!',
-            text: '',
-            showConfirmButton: false,
-            timer: 2000
-            });
-            cek = false;
-        }
 
     // Ambil data sekolah dan data jurusan secara bersamaan
     Promise.all([getpoliData(kodepoliValue,namapoliValue)])

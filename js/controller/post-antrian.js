@@ -55,43 +55,10 @@ function pushData(){
         cek = false;
     }
     
-    if (namapoliklinikValue === "") {
-        Swal.fire({
-        icon: 'error',
-        title: 'Nama Poliklinik tidak boleh kosong!',
-        text: '',
-        showConfirmButton: false,
-        timer: 2000
-        });
-        cek = false;
-    }
-    
     if (namapasienValue === "") {
         Swal.fire({
         icon: 'error',
         title: 'Nama Pasien tidak boleh kosong!',
-        text: '',
-        showConfirmButton: false,
-        timer: 2000
-        });
-        cek = false;
-    }
-    
-    if (nomorktpValue === "") {
-        Swal.fire({
-        icon: 'error',
-        title: 'Nomor KTP tidak boleh kosong!',
-        text: '',
-        showConfirmButton: false,
-        timer: 2000
-        });
-        cek = false;
-    }
-    
-    if (nomorantrianValue === "") {
-        Swal.fire({
-        icon: 'error',
-        title: 'Nomor Antrian tidak boleh kosong!',
         text: '',
         showConfirmButton: false,
         timer: 2000

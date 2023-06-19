@@ -21,6 +21,17 @@ function pushData(){
             });
             return;
         }
+
+        if (!/^\d{16}$/.test(nomorktpValue)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Nomor KTP harus terdiri dari 16 angka',
+                text: '',
+                showConfirmButton: false,
+                timer: 2000
+                });
+                cek = false;
+          }
         
         if (nomorktpValue === "") {
             Swal.fire({
@@ -43,6 +54,17 @@ function pushData(){
             });
             cek = false;
         }
+
+        if (!/^\d{12}$/.test(nomorteleponValue)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Nomor Telepon harus terdiri dari 12 angka',
+                text: '',
+                showConfirmButton: false,
+                timer: 2000
+                });
+                cek = false;
+          }
         
         if (nomorteleponValue === "") {
             Swal.fire({

@@ -44,28 +44,6 @@ function pushData(){
         return;
     }
     
-    if (kodepoliklinikValue === "") {
-        Swal.fire({
-        icon: 'error',
-        title: 'Kode Poliklinik tidak boleh kosong!',
-        text: '',
-        showConfirmButton: false,
-        timer: 2000
-        });
-        cek = false;
-    }
-    
-    if (namapasienValue === "") {
-        Swal.fire({
-        icon: 'error',
-        title: 'Nama Pasien tidak boleh kosong!',
-        text: '',
-        showConfirmButton: false,
-        timer: 2000
-        });
-        cek = false;
-    }
-    
     if (statusantrianValue === "") {
         Swal.fire({
         icon: 'error',

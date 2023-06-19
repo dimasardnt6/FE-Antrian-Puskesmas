@@ -401,21 +401,31 @@
                     <!-- <form role="form"> -->
                     <h6 class="text-center uppercase py-3 border-b">Data Antrian</h6>
                     <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Kode Poliklinik</label>
-                    <div class="mb-4">
-                      <input id="kode_poliklinik" type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Kode Poliklinik" aria-label="Kode Poliklinik" aria-describedby="kode_poliklinik" />
+                    <div class="relative mb-4">
+                      <select id="kode_poliklinik" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 pr-8 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                        <option class="text-center">Pilih Kode Poliklinik</option>
+                      </select>
+                      <i class="fas fa-chevron-down absolute top-0 right-0 px-3 py-2 pointer-events-none"></i>
                     </div>
                     <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Nama Poliklinik</label>
                     <div class="mb-4">
-                      <input id="nama_poliklinik" type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nama Poliklinik" aria-label="Nama Poliklinik" aria-describedby="nama_poliklinik-addon" />
-                    </div>
+                      <input id="nama_poliklinik" disabled type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nama Poliklinik" aria-label="Nama Poliklinik" aria-describedby="nama_poliklinik" />
+                    </div> 
                     <h6 class="text-center uppercase py-3 border-b">Data Pasien</h6>
                     <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Nama Pasien</label>
-                    <div class="mb-4">
-                      <input id="nama_pasien" type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nama Pasien" aria-label="Nama Pasien" aria-describedby=" nama_pasien" />
+                    <div class="relative mb-4">
+                      <select id="nama_pasien" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 pr-8 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                        <option class="text-center">Pilih Nama Pasien</option>
+                      </select>
+                      <i class="fas fa-chevron-down absolute top-0 right-0 px-3 py-2 pointer-events-none"></i>
                     </div>
                     <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Nomor KTP</label>
                     <div class="mb-4">
-                      <input id="nomor_ktp" type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nomor KTP" aria-label="Nomor KTP" aria-describedby="nomor_ktp-addon" />
+                      <input id="nomor_ktp" disabled type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nomor KTP" aria-label="Nomor KTP" aria-describedby="nomor_ktp-addon" />
+                    </div>
+                    <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Nomor Telepon</label>
+                    <div class="mb-4">
+                      <input id="nomor_telepon" disabled type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nomor Telepon" aria-label="Nomor Telepon" aria-describedby="nomor_telepon-addon" />
                     </div>
                     <h6 class="text-center uppercase py-3 border-b">Data Antrian</h6>
                     <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Nomor Antrian</label>
@@ -423,9 +433,15 @@
                       <input id="nomor_antrian" type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Nomor Antrian" aria-label="Nomor Antrian" aria-describedby="nomor_antrian-addon" />
                     </div>
                     <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Status Antrian</label>
-                    <div class="mb-4">
-                      <input id="status_antrian" type="text" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow" placeholder="Status Antrian" aria-label="Status Antrian" aria-describedby="status_antrian-addon" />
-                    </div>
+                   <div class="relative">
+                        <select id="status_antrian" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 pr-8 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow">
+                          <option class="text-center">Pilih Status Antrian</option>
+                          <option>Menunggu</option>
+                          <option>Sedang Diperiksa</option>
+                          <option>Selesai</option>
+                        </select>
+                        <i class="fas fa-chevron-down absolute top-0 right-0 px-3 py-2 pointer-events-none"></i>
+                      </div>
                       <div class="text-center">
                         <button id="button" class="inline-block px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-purple-700 to-pink-500 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Update</button>
                         <a class="inline-block px-6 py-3 mt-6 font-bold text-center uppercase align-middle transition-all bg-transparent border rounded-lg cursor-pointer border-fuchsia-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:scale-102 active:opacity-85 hover:shadow-soft-xs text-fuchsia-500" href="tabel-antrian.html">Cancel</a>

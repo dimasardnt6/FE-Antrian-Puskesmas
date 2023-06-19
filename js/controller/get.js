@@ -9,6 +9,7 @@ function isiRow(value) {
             .replace("#NAMAPOLI#", value.poli.nama_poliklinik)
             .replace("#NAMAPASIEN#", value.identitas_pasien.nama_pasien)
             .replace("#NOKTP#", value.identitas_pasien.nomor_ktp)
+            .replace("#NOHP#", value.identitas_pasien.nomor_telepon)
             .replace("#NOANTRIAN#", value.nomor_antrian)
             .replace("#TANGGALDAFTAR#", value.tanggal_pendaftaran)
             .replace("#IDEDIT#", value._id)

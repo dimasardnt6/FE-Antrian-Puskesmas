@@ -17,6 +17,9 @@ export let isiTabel =
         <p class="mb-0 font-semibold leading-tight text-xs">#NOKTP#</p>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+        <p class="mb-0 font-semibold leading-tight text-xs">#NOHP#</p>
+    </td>
+    <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
         <p class="mb-0 font-semibold leading-tight text-xs">#NOANTRIAN#</p>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">

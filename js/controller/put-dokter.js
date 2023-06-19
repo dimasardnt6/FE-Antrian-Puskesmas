@@ -97,7 +97,6 @@ function pushData(){
     })
     .catch((error) => {
         console.error(error);
-        document.getElementById("status").textContent = "Failed to fetch data.";
     });
     }
 

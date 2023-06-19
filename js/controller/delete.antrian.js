@@ -8,10 +8,16 @@ function deleteData(IDHAPUS) {
     };
 
     fetch(target_url, requestOptions)
-        .then(response => response.json())
-        .then(result => {
-            alert(result.message);
-            location.reload();
-        })
-        .catch(error => console.log('Error:', error));
+    .then(response => response.json())
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Data berhasil dihapus',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        location.reload();
+      });
+    })
+    .catch(error => console.log('Error:', error));
 }

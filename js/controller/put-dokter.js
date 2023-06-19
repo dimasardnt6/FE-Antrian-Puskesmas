@@ -69,9 +69,12 @@ function pushData(){
     let data = {
         nama_dokter: namadokterValue,
         spesialisasi: spesialisasiValue,
-        kode_poliklinik: kodepoliValue,
-        nama_poliklinik: namapoliValue
-    }
+        poli :{
+            kode_poliklinik: kodepoliValue,
+            nama_poliklinik: namapoliValue,
+        },
+        
+    };
     putData(urlPUT, data, AmbilResponse);
 
 }

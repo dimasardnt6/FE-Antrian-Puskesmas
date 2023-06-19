@@ -91,13 +91,17 @@ if (statusantrianValue === "") {
 }  
 
     let data = {
-        kode_poliklinik: kodepoliklinikValue,
-        nama_poliklinik: namapoliklinikValue,
-        nama_pasien: namapasienValue,
-        nomor_ktp: nomorktpValue,                
+        poli :{
+            kode_poliklinik: kodepoliklinikValue,
+            nama_poliklinik: namapoliklinikValue,
+        },
+        identitas_pasien :{
+            nama_pasien: namapasienValue,
+            nomor_ktp: nomorktpValue, 
+        },               
         nomor_antrian: nomorantrianValue,
         status_antrian: statusantrianValue
-    }
+    };
     putData(urlPUT, data, AmbilResponse);
 
 }

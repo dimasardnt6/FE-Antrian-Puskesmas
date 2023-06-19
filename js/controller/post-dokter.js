@@ -2,6 +2,15 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse} from "../config/url_post-dokter.js";
 
+async function getpoliData(poliklinikId) {
+    // Fetch school data based on the ID (replace with your API endpoint)
+    const response = await fetch(`https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`);
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Failed to fetch poliklinik data.");
+    }
+  }
 
 function pushData(){
 
@@ -66,14 +75,30 @@ function pushData(){
             cek = false;
         }
 
+         // Ambil data sekolah dan data jurusan secara bersamaan
+  Promise.all([getpoliData(kodepoliValue,namapoliValue)])
+  .then(([poliData]) => {
+    // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
+    let kodepoliklinikText = poliData.kode_poliklinik;
+    let namapoliklinikValue = poliData.nama_poliklinik;
+    
+    // Bangun objek data
     let data = {
         nama_dokter: namadokterValue,
         spesialisasi: spesialisasiValue,
-        kode_poliklinik: kodepoliValue,
-        nama_poliklinik: namapoliValue
-    }
+        poli:{
+            _id: kodepoliValue,
+            kode_poliklinik: kodepoliklinikText,
+            nama_poliklinik: namapoliklinikValue,
+        },
+    };
+    console.log(data);
     postData(urlPOST, data, AmbilResponse);
-
+  })
+  .catch((error) => {
+    console.error(error);
+    document.getElementById("status").textContent = "Failed to fetch data.";
+  });
 }
 
 onClick("button", pushData);

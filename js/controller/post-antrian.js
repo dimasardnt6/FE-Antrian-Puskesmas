@@ -91,17 +91,18 @@ function pushData(){
     }  
 
     let data = {
-        poli :{
-            kode_poliklinik: kodepoliklinikValue,
-            nama_poliklinik: namapoliklinikValue,
-        },
-        identitas_pasien :{
-            nama_pasien: namapasienValue,
-            nomor_ktp: nomorktpValue,  
-        },              
-        nomor_antrian: nomorantrianValue,
-        status_antrian: statusantrianValue
-    };
+        poli: {
+            kode_poliklinik: getValue("kode_poliklinik"),
+            nama_poliklinik: getValue("nama_poliklinik"),
+            },
+            identitas_pasien: {
+            nama_pasien: getValue("nama_pasien"),
+            nomor_ktp: getValue("nomor_ktp")
+            },                
+            nomor_antrian: parseInt(getValue("nomor_antrian")),
+            status_antrian: getValue("status_antrian"),
+
+    }
     postData(urlPOST, data, AmbilResponse);
 
 }

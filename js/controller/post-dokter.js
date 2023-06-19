@@ -53,7 +53,7 @@ function pushData(){
             cek = false;
         }
         
-        if (kodepoliValue === "") {
+        if (kodepoliklinikText === "") {
             Swal.fire({
             icon: 'error',
             title: 'Kode Poliklinik tidak boleh kosong!',

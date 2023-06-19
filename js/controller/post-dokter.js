@@ -2,15 +2,15 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse} from "../config/url_post-dokter.js";
 
-async function getpoliData(poliklinikId) {
-    // Fetch school data based on the ID (replace with your API endpoint)
-    const response = await fetch(`https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`);
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("Failed to fetch poliklinik data.");
+    async function getpoliData(poliklinikId) {
+        // Fetch school data based on the ID (replace with your API endpoint)
+        const response = await fetch(`https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`);
+        if (response.ok) {
+        return response.json();
+        } else {
+        throw new Error("Failed to fetch poliklinik data.");
+        }
     }
-  }
 
 function pushData(){
 

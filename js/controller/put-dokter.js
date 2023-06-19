@@ -2,15 +2,15 @@ import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPUT, AmbilResponse} from "../config/url_put-dokter.js";
 
-async function getpoliData(poliklinikId) {
-    // Fetch school data based on the ID (replace with your API endpoint)
-    const response = await fetch(`https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`);
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error("Failed to fetch poliklinik data.");
+    async function getpoliData(poliklinikId) {
+        // Fetch school data based on the ID (replace with your API endpoint)
+        const response = await fetch(`https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`);
+        if (response.ok) {
+        return response.json();
+        } else {
+        throw new Error("Failed to fetch poliklinik data.");
+        }
     }
-  }
 
 function pushData(){
 
@@ -75,7 +75,7 @@ function pushData(){
         cek = false;
     }
 
-   // Ambil data sekolah dan data jurusan secara bersamaan
+    // Ambil data sekolah dan data jurusan secara bersamaan
     Promise.all([getpoliData(kodepoliValue,namapoliValue)])
     .then(([poliData]) => {
         // Ekstrak nilai-nilai yang diperlukan dari data yang diambil

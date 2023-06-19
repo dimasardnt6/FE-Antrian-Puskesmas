@@ -75,30 +75,30 @@ function pushData(){
             cek = false;
         }
 
-         // Ambil data sekolah dan data jurusan secara bersamaan
-  Promise.all([getpoliData(kodepoliValue,namapoliValue)])
-  .then(([poliData]) => {
-    // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
-    let kodepoliklinikText = poliData.kode_poliklinik;
-    let namapoliklinikValue = poliData.nama_poliklinik;
-    
-    // Bangun objek data
-    let data = {
-        nama_dokter: namadokterValue,
-        spesialisasi: spesialisasiValue,
-        poli:{
-            _id: kodepoliValue,
-            kode_poliklinik: kodepoliklinikText,
-            nama_poliklinik: namapoliklinikValue,
-        },
-    };
-    console.log(data);
-    postData(urlPOST, data, AmbilResponse);
-  })
-  .catch((error) => {
-    console.error(error);
-    document.getElementById("status").textContent = "Failed to fetch data.";
-  });
-}
+    // Ambil data sekolah dan data jurusan secara bersamaan
+    Promise.all([getpoliData(kodepoliValue,namapoliValue)])
+    .then(([poliData]) => {
+        // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
+        let kodepoliklinikText = poliData.kode_poliklinik;
+        let namapoliklinikValue = poliData.nama_poliklinik;
+
+        // Bangun objek data
+        let data = {
+            nama_dokter: namadokterValue,
+            spesialisasi: spesialisasiValue,
+            poli:{
+                _id: kodepoliValue,
+                kode_poliklinik: kodepoliklinikText,
+                nama_poliklinik: namapoliklinikValue,
+            },
+        };
+        console.log(data);
+        postData(urlPOST, data, AmbilResponse);
+    })
+    .catch((error) => {
+        console.error(error);
+        document.getElementById("status").textContent = "Failed to fetch data.";
+    });
+    }
 
 onClick("button", pushData);

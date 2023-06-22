@@ -13,29 +13,29 @@
 //     });
 //   })
 //   .catch((error) => console.log(error));
-fetch("https://dimasardnt6-ulbi.herokuapp.com/all-poliklinik")
+fetch("https://dimasardnt6-ulbi.herokuapp.com/all-dokter")
   .then((response) => response.json())
   .then((data) => {
-    const poliDropdown = document.getElementById("kode_poliklinik");
-    const namaPoliInput = document.getElementById("nama_poliklinik");
+    const dokterDropdown = document.getElementById("nama_dokter");
+    const spesialisasiInput = document.getElementById("spesialisasi");
 
     // Generate options for each data item
     data.forEach((item) => {
       const option = document.createElement("option");
       option.value = item._id;
-      option.text = item.kode_poliklinik;
-      poliDropdown.appendChild(option);
+      option.text = item.nama_dokter;
+      dokterDropdown.appendChild(option);
     });
 
     // Event listener for polyclinic code dropdown change
-    poliDropdown.addEventListener("change", () => {
-      const selectedId = poliDropdown.value;
-      const selectedPoli = data.find((item) => item._id === selectedId);
+    dokterDropdown.addEventListener("change", () => {
+      const selectedId = dokterDropdown.value;
+      const selectedDokter = data.find((item) => item._id === selectedId);
 
-      if (selectedPoli) {
-        namaPoliInput.value = selectedPoli.nama_poliklinik;
+      if (selectedDokter) {
+        spesialisasiInput.value = selectedDokter.spesialisasi;
       } else {
-        namaPoliInput.value = "";
+        spesialisasiInput.value = "";
       }
     });
   })

@@ -3,6 +3,8 @@ export function isiData(results) {
       { id: 'kode_poliklinik', path: 'kode_poliklinik' },
       { id: 'nama_poliklinik', path: 'nama_poliklinik' },
       { id: 'deskripsi', path: 'deskripsi' },
+      { id: 'nama_dokter', path: 'dokter._id' },
+      { id: 'spesialisasi', path: 'dokter.spesialisasi' },
     ];
   
     inputMapping.forEach(({ id, path, index, property }) => {

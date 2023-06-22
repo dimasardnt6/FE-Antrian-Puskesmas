@@ -2,8 +2,6 @@ export function isiData(results) {
     const inputMapping = [
       { id: 'nama_dokter', path: 'nama_dokter' },
       { id: 'spesialisasi', path: 'spesialisasi' },
-      { id: 'kode_poliklinik', path: 'poli._id' },
-      { id: 'nama_poliklinik', path: 'poli.nama_poliklinik' },
     ];
   
     inputMapping.forEach(({ id, path, index, property }) => {

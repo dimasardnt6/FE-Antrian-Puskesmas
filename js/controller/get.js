@@ -1,5 +1,5 @@
 import { addInner } from "https://bukulapak.github.io/element/process.js";
-import { isiTabel,isiTabel2,isiTabel3,isiTabel4 } from "../temp/table.js";
+import { isiTabel,isiTabel2,isiTabel3,isiTabel4, isiTabel5 } from "../temp/table.js";
 export function isiTableAntrian(results) {
     results.forEach(isiRow);
 }
@@ -44,6 +44,8 @@ function isiRow3(value) {
             .replace("#IDEDIT#", value._id)
             .replace("#IDHAPUS#", value._id)
             .replace("#DESKRIPSI#", value.deskripsi)
+            .replace("#NAMADOKTER#", value.dokter.nama_dokter)
+            .replace("#SPESIALISASI#", value.dokter.spesialisasi)
         addInner("iniTabel3", content);
 }
 
@@ -53,10 +55,20 @@ export function isiTableDokter(results) {
 function isiRow4(value) {
     let content =
          isiTabel4.replace("#NAMADOKTER#", value.nama_dokter)
-            .replace("#SPESIALIS#", value.spesialisasi)
             .replace("#IDEDIT#", value._id)
             .replace("#IDHAPUS#", value._id)
-            .replace("#KODEPOLI#", value.poli.kode_poliklinik)
-            .replace("#NAMAPOLI#", value.poli.nama_poliklinik)
+            .replace("#SPESIALIS#", value.spesialisasi)
         addInner("iniTabel4", content);
+}
+
+export function isiTableUser(results) {
+    results.forEach(isiRow5);
+}
+function isiRow5(value) {
+    let content =
+         isiTabel5.replace("#FNAME#", value.firstname)
+            .replace("#LNAME#", value.lastname)
+            .replace("#EMAIL#", value.email)
+            .replace("#PASSWORD#", value.password)
+        addInner("iniTabel5", content);
 }

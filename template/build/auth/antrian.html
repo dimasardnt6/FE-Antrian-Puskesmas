@@ -12,7 +12,7 @@
     <script type="module" src="../../../js/fetch.js"></script>
     <script type="module" src="../auth/assets/js/page.js"></script>
     <script type="module" src="../../../js/controller/post-pasien.js"></script>
-    <script type="module" src="../../../js/controller/post-antrian.js"></script>
+     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
     <script type="module" src="../../../js/fetch-pilih-poli-pasien.js"></script>
 </head>
@@ -190,8 +190,8 @@
                                     </div>
                                     <div class="row">
                                     <div class="col-md-6 text-end ms-auto">
-                                        <button id="buttonPasien" class="btn btn-primary btn-round bg-gradient-primary mb-0">Save</button>
-                                        <button id="nextPage" class="btn btn-primary btn-round bg-gradient-primary mb-0">Form Antrian</button>
+                                        <button id="buttonPasien" type="submit" class="btn btn-primary btn-round bg-gradient-primary mb-0">Save</button>
+                                        <button id="nextPage" type="button" class="btn btn-primary btn-round bg-gradient-primary mb-0">Form Antrian</button>
                                     </div>
                                     </div>
                                 </div>
@@ -248,8 +248,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 text-end ms-auto">
-                                            <button id="buttonAntrian" class="btn btn-primary btn-round bg-gradient-primary mb-0">Previous</button>
-                                            <button id="saveForm" type="submit" class="btn btn-primary btn-round bg-gradient-primary mb-0">Save</button>
+                                            <button id="prevPage" type="button" class="btn btn-primary btn-round bg-gradient-primary mb-0">Previous</button>
+                                            <button id="buttonAntrian" type="submit" class="btn btn-primary btn-round bg-gradient-primary mb-0">Save</button>
                                         </div>
                                     </div>
                                 </div>

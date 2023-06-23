@@ -13,7 +13,7 @@ export function AmbilResponse(result) {
 }
 
 // Menambahkan event listener pada tombol "Save"
-document.getElementById("button").addEventListener("click", function() {
+document.getElementById("buttonPasien").addEventListener("click", function() {
   // Memanggil fungsi postData dengan callback AmbilResponse
   postData(urlPOST, data, AmbilResponse);
 });

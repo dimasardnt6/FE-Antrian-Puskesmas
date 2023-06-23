@@ -112,4 +112,4 @@ function pushData(){
 
 }
 
-onClick("button", pushData);
+onClick("buttonPasien", pushData);

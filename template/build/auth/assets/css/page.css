@@ -1,0 +1,8 @@
+  /* CSS styling */
+  .page {
+    display: none; /* Menyembunyikan semua halaman form */
+}
+
+.active {
+    display: block; /* Menampilkan halaman form yang aktif */
+}

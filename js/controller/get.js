@@ -1,5 +1,5 @@
 import { addInner } from "https://bukulapak.github.io/element/process.js";
-import { isiTabel,isiTabel2,isiTabel3,isiTabel4, isiTabel5 } from "../temp/table.js";
+import { isiTabel,isiTabel2,isiTabel3,isiTabel4, isiTabel5, isiTabelAntrianUser } from "../temp/table.js";
 export function isiTableAntrian(results) {
     results.forEach(isiRow);
 }
@@ -71,4 +71,20 @@ function isiRow5(value) {
             .replace("#EMAIL#", value.email)
             .replace("#PASSWORD#", value.password)
         addInner("iniTabel5", content);
+}
+
+export function isiTableAntrianUser(results) {
+    results.forEach(isiRow6);
+}
+function isiRow6(value) {
+    let content =
+         isiTabelAntrianUser.replace("#KODEPOLI#", value.poli.kode_poliklinik)
+            .replace("#NAMAPOLI#", value.poli.nama_poliklinik)
+            .replace("#NAMAPASIEN#", value.identitas_pasien.nama_pasien)
+            .replace("#NOKTP#", value.identitas_pasien.nomor_ktp)
+            .replace("#NOHP#", value.identitas_pasien.nomor_telepon)
+            .replace("#NOANTRIAN#", value.nomor_antrian)
+            .replace("#TANGGALDAFTAR#", value.tanggal_pendaftaran)
+            .replace("#STATUS#", value.status_antrian)
+        addInner("iniTabelAntrianUser", content);
 }

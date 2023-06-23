@@ -11,7 +11,7 @@ function pushData(){
     let jeniskelaminValue = getValue("jenis_kelamin");
 
      // form validation
-        if (namapasienValue === "" && nomorktpValue === "" && alamatValue === "" && nomorteleponValue === "" && tanggallahirValue === "" && jeniskelaminValue === "") {
+        if (namapasienValue === "" && nomorktpValue === "" && alamatValue === "" && nomorteleponValue === "" && tanggallahirValue === "") {
             Swal.fire({
             icon: 'error',
             title: 'Data tidak boleh kosong!',
@@ -20,6 +20,17 @@ function pushData(){
             timer: 2000
             });
             return;
+        }
+
+        if (namapasienValue === "") {
+            Swal.fire({
+            icon: 'error',
+            title: 'Nama Pasien tidak boleh kosong!',
+            text: '',
+            showConfirmButton: false,
+            timer: 2000
+            });
+            cek = false;
         }
 
         if (!/^\d{16}$/.test(nomorktpValue)) {

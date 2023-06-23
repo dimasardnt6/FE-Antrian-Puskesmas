@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Data Antrian</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/soft-ui-design-system-builder/v1.0.7/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/soft-ui-design-system-builder/v1.0.7/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/theme.css">
+    <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
+
+    <script type="module" src="../../../js/fetch.js"></script>
+    <script type="module" src="../../../js/controller/post-antrian.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="../../../js/fetch-pilih-poli-pasien.js"></script>
+</head>
+<body>
+    <section class="py-5">
+        <h2 class="text-center mt-5 mb-5">Pengisian Form</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card overflow-hidden">
+                        <div class="row">
+                            <!-- Halaman 1 -->
+                            <div class="col-lg-7">
+                                <form class="p-3" id="contact-form" method="post">
+                                    <div class="card-header px-4 py-sm-5 py-3">
+                                        <h2>Form Data Antrian</h2>
+                                    </div>
+                                    <div class="card-body pt-1">
+                                        <!-- Konten form halaman 1 -->
+                                        <div class="row">
+                                            <h6 class="text-center uppercase py-0 border-b">Data Poliklinik</h6>
+                                        <div class="col-md-12 pe-2 mb-3">
+                                            <label>Kode Poliklinik</label>
+                                            <div class="relative">
+                                                <select id="kode_poliklinik" class="form-control">
+                                                    <option class="text-center">Pilih kode poliklinik</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pe-2 mb-3">
+                                            <label>Nama Poliklinik</label>
+                                            <input id="nama_poliklinik" disabled class="form-control" placeholder="Nama Poliklinik" type="text" >
+                                        </div>
+                                    </div>
+                                    <h6 class="text-center uppercase py-0 border-b">Data Pasien</h6>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <label>Nama Pasien</label>
+                                        <div class="relative">
+                                            <select id="nama_pasien" class="form-control">
+                                                <option class="text-center">Pilih nama pasien</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <label>Nomor KTP</label>
+                                        <input id="nomor_ktp" disabled class="form-control" placeholder="Nomor KTP" type="text" >
+                                    </div>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <label>Nomor Telepon</label>
+                                        <input id="nomor_telepon" disabled class="form-control" placeholder="Nomor Telepon" type="text" >
+                                    </div>
+                                    <div class="col-md-12 pe-2 mb-3">
+                                        <label>Status Antrian</label>
+                                        <div class="relative">
+                                            <select disabled id="status_antrian" class="form-control">
+                                                <option class="text-center">Menunggu</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-md-6 text-end ms-auto">
+                                                <a href="insert-pasien.html" class="btn btn-primary btn-round bg-gradient-primary mb-0">Kembali</a>
+                                                <button id="buttonAntrian" type="button" class="btn btn-primary btn-round bg-gradient-primary mb-0">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Gambar latar halaman -->
+                            <div class="col-lg-5 position-relative bg-cover px-0" style="background-image: url(../assets/img/curved-images/curved6.jpg)">
+                                <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
+                                    <div class="mask bg-gradient-primary opacity-9"></div>
+                                    <div class="p-5 ps-sm-6 position-relative text-start my-auto">
+                                        <h3 class="text-white">Informasi :</h3>
+                                        <p class="text-white opacity-8 mb-4">- Silahkan untuk melengkapi Form Data Pasien</p>
+                                        <p class="text-white opacity-8 mb-4">- Lengkapi juga Form Data Antrian</p>
+                                        <!-- Informasi kontak -->
+                                        <div class="d-flex p-2 text-white">
+                                            <div>
+                                                <i class="fas fa-phone text-sm"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <span class="text-sm opacity-8">(+40) 772 100 200</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex p-2 text-white">
+                                            <div>
+                                                <i class="fas fa-envelope text-sm"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <span class="text-sm opacity-8">hello@creative-tim.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex p-2 text-white">
+                                            <div>
+                                                <i class="fas fa-map-marker-alt text-sm"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <span class="text-sm opacity-8">Dyonisie Wolf Bucharest, RO 010458</span>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <!-- Tombol media sosial -->
+                                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook">
+                                                <i class="fab fa-facebook"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Twitter">
+                                                <i class="fab fa-twitter"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Dribbble">
+                                                <i class="fab fa-dribbble"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

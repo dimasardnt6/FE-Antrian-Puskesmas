@@ -8,12 +8,12 @@ export function AmbilResponse(result) {
       showConfirmButton: false,
       timer: 1500
     }).then(() => {
-      window.location.href = "tabel-antrian.html";
+      window.location.href = "antrian.html";
     });
   }
   
   // Menambahkan event listener pada tombol "Save"
-  document.getElementById("button").addEventListener("click", function() {
+  document.getElementById("buttonAntrian").addEventListener("click", function() {
     // Memanggil fungsi postData dengan callback AmbilResponse
     postData(urlPOST, data, AmbilResponse);
   });

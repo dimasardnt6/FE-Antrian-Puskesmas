@@ -153,14 +153,18 @@ export let isiTabelAntrianUser =
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
         <div class="flex px-2 py-1">
             <div class="flex flex-col justify-center">
-                <h6 class="mb-0 leading-normal text-sm">#KODEPOLI#</h6>
-                <p class="mb-0 leading-tight text-xs text-slate-400">#NAMAPOLI#</p>
+                <h6 class="mb-0 leading-normal text-sm">#NAMAPASIEN#</h6>
+                <p class="mb-0 leading-tight text-xs text-slate-400">#NOKTP#</p>
             </div>
         </div>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <h6 class="mb-0 leading-normal text-sm">#NAMAPASIEN#</h6>
-        <p class="mb-0 font-semibold leading-tight text-xs">#NOKTP#</p>
+        <div class="flex px-2 py-1">
+            <div class="flex flex-col justify-center">
+                <h6 class="mb-0 leading-normal text-sm">#KODEPOLI#</h6>
+                <p class="mb-0 leading-tight text-xs text-slate-400">#NAMAPOLI#</p>
+            </div>
+        </div>
     </td>
     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
         <p class="mb-0 font-semibold leading-tight text-xs">#NOHP#</p>

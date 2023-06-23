@@ -8,7 +8,7 @@ export function AmbilResponse(result) {
     showConfirmButton: false,
     timer: 1500
   }).then(() => {
-    window.location.href = "tabel-pasien.html";
+    window.location.href = "insert-antrian.html";
   });
 }
 

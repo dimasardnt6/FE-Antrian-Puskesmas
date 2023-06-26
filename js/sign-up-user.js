@@ -1,8 +1,7 @@
 // document.getElementById("signupBtn").addEventListener("click", signup);
 
 function signup() {
-    const firstname = document.getElementById("firstname").value;
-    const lastname = document.getElementById("lastname").value;
+    const fullname = document.getElementById("fullname").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confirmpass = document.getElementById("confirmpass").value;
@@ -14,8 +13,7 @@ function signup() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            firstname: firstname,
-            lastname: lastname,
+            fullname: fullname,
             email: email,
             password: password,
             confirmpass: confirmpass

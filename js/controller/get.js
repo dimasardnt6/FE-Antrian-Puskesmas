@@ -66,9 +66,10 @@ export function isiTableUser(results) {
 }
 function isiRow5(value) {
     let content =
-         isiTabel5.replace("#FNAME#", value.firstname)
-            .replace("#LNAME#", value.lastname)
+         isiTabel5
             .replace("#EMAIL#", value.email)
+            .replace("#FULLNAME#", value.fullname)
+            .replace("#IDHAPUS#", value._id)
             .replace("#PASSWORD#", value.password)
         addInner("iniTabel5", content);
 }

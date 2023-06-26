@@ -1,6 +1,6 @@
 function deleteData(IDHAPUS) {
-    var poliklinikId = IDHAPUS;
-    var target_url = "https://dimasardnt6-ulbi.herokuapp.com/delete-poliklinik/" + poliklinikId;
+    var userId = IDHAPUS;
+    var target_url = "https://dimasardnt6-ulbi.herokuapp.com/delete-user/" + userId;
   
     var requestOptions = {
       method: 'DELETE',

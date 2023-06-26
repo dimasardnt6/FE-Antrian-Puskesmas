@@ -27,7 +27,7 @@ function signIn() {
                 text: "You have successfully signed in!"
             }).then(() => {
                 // Reload window
-                window.location.href = "../pages/dashboard.html";
+                window.location.href = "antrian.html";
             });
         } else {
             // Display signin error message using SweetAlert

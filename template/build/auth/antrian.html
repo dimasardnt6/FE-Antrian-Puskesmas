@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
     <link rel="stylesheet" href="./assets/css/page.css">
     <script type="module" src="../../../js/fetch.js"></script>
+    <script type="module" src="../../../js/logout.js"></script>
     <script type="module" src="../auth/assets/js/page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 </head>
@@ -17,42 +18,48 @@
 <body class="null">
     <!-- -------- START HEADER 2 w/ waves and typed text ------- -->
 <header class="position-relative" id="HOME">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg blur blur-rounded position-fixed top-0 start-0 end-0 mx-4 py-2 z-index-3 shadow">
         <div class="container">
-            <a class="navbar-brand text-lg text-black" href="antrian.html" rel="tooltip" data-placement="bottom">
-                Antrian Puskesmas
-            </a>
-            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon mt-2">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                </span>
-            </button>
-            <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
-            </div>
-            <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
-                <ul class="navbar-nav navbar-nav-hover w-150" style="margin-left: -15;">
-                    <li class="nav-item dropdown dropdown-hover mx-2" style="width: 125px;">
-                        <a href="#HOME" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" aria-expanded="false">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover mx-2" style="width: 125px;">
-                        <a href="#TABEL" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" aria-expanded="false">
-                            Tabel Antrian
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown dropdown-hover mx-2" style="width: 125px;">
-                        <a href="#DAFTAR" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" aria-expanded="false">
-                            Dapatkan Antrian
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
+        <a class="navbar-brand text-lg" href="https://demos.creative-tim.com/soft-ui-design-system-pro/presentation.html" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+            Antrian Puskesmas
+        </a>
+        
+        <button class="btn btn-sm  bg-gradient-primary  btn-round mb-0 ms-auto d-lg-none d-block">Logout</button>
+        
+        <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0" id="navigation">
+            <ul class="navbar-nav navbar-nav-hover mx-auto">
+            <li class="nav-item mx-2">
+                <a href="#HOME" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button">
+                Home
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a href="#TABEL" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button">
+                Tabel Antrian
+                </a>
+            </li>
+            <li class="nav-item mx-2">
+                <a href="#DAFTAR" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" role="button">
+                Pendaftaran
+                </a>
+            </li>
+            </ul>
+            <ul class="navbar-nav d-lg-block d-none">
+            <li class="nav-item">
+                <button id="logoutButton" class="btn btn-sm bg-gradient-primary btn-round mb-0 me-1">Logout</button>
+            </ul>
+        </div>
         </div>
     </nav>
+        <!-- End Navbar -->
         <div class="page-header min-vh-100" style="background-image: url(../assets/img/puskesmas.jpg);">
         <span class="mask bg-gradient-primary"></span>
         <div class="container">
@@ -112,7 +119,7 @@
     </section>
   <!-- -------- END Features w/ icons and text on left & gradient title and text on right -------- -->
   
-    <section class="py-4" id="DAFTAR">
+    <section class="py-0" id="DAFTAR">
         <h2 class="text-center mt-5 mb-5">Pendaftaran Antrian</h2>
         <div class="container">
         <div class="row justify-space-between py-2">
@@ -136,7 +143,7 @@
                         </g>
                     </svg>
                     </div>
-                    <h2 class="text-white up mb-0">Daftar antrian sekarang juga untuk mendapatkanan pelayanan medis yang terbaik di puskesmas</h2>
+                    <h4 class="text-white up mb-0">Daftar antrian sekarang juga untuk mendapatkanan pelayanan medis yang terbaik di puskesmas</h4>
                     <p class="lead up">Klik button dibawah ini</p>
                     <a href="insert-pasien.html" class="btn btn-outline-white btn-lg mt-3 up">Form Data Pasien</a>
                 </div>
@@ -296,4 +303,11 @@
     <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/soft-ui-design-system-builder/v1.0.7/assets/js/plugins/flatpickr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/public-assets@master/soft-ui-design-system-builder/v1.0.7/assets/js/plugins/typedjs.js"></script>
     <script src="./assets/js/loopple/loopple.js"></script>
+    <script>
+        window.onload = function() {
+        var token = localStorage.getItem('token');
+        console.log("%cToken: %c" + token, "color: black; font-size: 18px;", "color: black; font-size: 18px;");
+    };
+    
+    </script>
 </body>

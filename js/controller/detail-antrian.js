@@ -5,7 +5,9 @@ export function isiData(results) {
       { id: 'nama_pasien', path: 'identitas_pasien.nama_pasien' },
       { id: 'nomor_ktp', path: 'identitas_pasien.nomor_ktp' },
       { id: 'nomor_telepon', path: 'identitas_pasien.nomor_telepon' },
+      { id: 'jenis_kelamin', path: 'identitas_pasien.jenis_kelamin' },
       { id: 'nomor_antrian', path: 'nomor_antrian' },
+      { id: 'tanggal_pendaftaran', path: 'tanggal_pendaftaran' },
       { id: 'status_antrian', path: 'status_antrian' },
     ];
   

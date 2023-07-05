@@ -63,6 +63,7 @@ function pushData(){
         let namapasienText = pasienData.nama_pasien;
         let noktpValue = pasienData.nomor_ktp;
         let noteleponValue = pasienData.nomor_telepon;
+        let jeniskelaminValue = pasienData.jenis_kelamin;
 
         // Bangun objek data
         let data = {
@@ -76,6 +77,7 @@ function pushData(){
                 nama_pasien: namapasienText,
                 nomor_ktp: noktpValue,
                 nomor_telepon: noteleponValue,
+                alamat: alamatValue,
             },
             status_antrian: statusantrianValue,
         };

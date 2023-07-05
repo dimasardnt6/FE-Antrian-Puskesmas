@@ -1,100 +1,111 @@
 import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPUT, AmbilResponse } from "../config/url_put-antrian.js";
+import { urlPUT, AmbilResponse} from "../config/url_put-antrian.js";
 
-async function getpoliData(poliklinikId) {
-  const response = await fetch(
-    `https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`
-  );
-  if (response.ok) {
-    return response.json();
-  } else {
-    throw new Error("Gagal mengambil data poliklinik.");
-  }
-}
 
-async function getpasienData(pasienId) {
-  const response = await fetch(
-    `https://dimasardnt6-ulbi.herokuapp.com/pasien/${pasienId}`
-  );
-  if (response.ok) {
-    return response.json();
-  } else {
-    throw new Error("Gagal mengambil data pasien.");
-  }
-}
+function pushData(){
 
-function pushData() {
-  let kodepoliklinikValue = getValue("kode_poliklinik");
-  let namapoliklinikValue = getValue("nama_poliklinik");
-  let namapasienValue = getValue("nama_pasien");
-  let nomorktpValue = getValue("nomor_ktp");
-  let nomorteleponValue = getValue("nomor_telepon");
-  let nomorantrianValue = getValue("nomor_antrian");
-  let statusantrianValue = getValue("status_antrian");
+    let kodepoliklinikValue = getValue("kode_poliklinik");
+    let namapoliklinikValue = getValue("nama_poliklinik");
+    let namapasienValue = getValue("nama_pasien");
+    let nomorktpValue = getValue("nomor_ktp");
+    let nomorteleponValue = getValue("nomor_telepon");
+    let nomorantrianValue = parseInt(getValue("nomor_antrian"));
+    let statusantrianValue = getValue("status_antrian");
 
-  // Validasi form
-  if (
-    kodepoliklinikValue === "" ||
-    namapoliklinikValue === "" ||
-    namapasienValue === "" ||
-    nomorktpValue === "" ||
-    statusantrianValue === ""
-  ) {
+   // Form validation
+   if (kodepoliklinikValue === "" && namapoliklinikValue === "" && namapasienValue === "" && nomorktpValue === "" && nomorantrianValue === "" && statusantrianValue === "") {
     Swal.fire({
-      icon: "error",
-      title: "Data tidak boleh kosong!",
-      text: "",
-      showConfirmButton: false,
-      timer: 2000,
+    icon: 'error',
+    title: 'Data tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
     });
     return;
-  }
+}
 
-  if (statusantrianValue === "") {
+if (kodepoliklinikValue === "") {
     Swal.fire({
-      icon: "error",
-      title: "Status Antrian tidak boleh kosong!",
-      text: "",
-      showConfirmButton: false,
-      timer: 2000,
+    icon: 'error',
+    title: 'Kode Poliklinik tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
     });
-    return;
-  }
+    cek = false;
+}
 
-  Promise.all([
-    getpoliData(kodepoliklinikValue),
-    getpasienData(namapasienValue),
-  ])
-    .then(([poliData, pasienData]) => {
-      let kodepoliText = poliData.kode_poliklinik;
-      let namapoliValue = poliData.nama_poliklinik;
+if (namapoliklinikValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nama Poliklinik tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
 
-      let namapasienText = pasienData.nama_pasien;
-      let noktpValue = pasienData.nomor_ktp;
-      let noteleponValue = pasienData.nomor_telepon;
+if (namapasienValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nama Pasien tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
 
-      let data = {
-        poli: {
-          _id: kodepoliklinikValue,
-          kode_poliklinik: kodepoliText,
-          nama_poliklinik: namapoliValue,
+if (nomorktpValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nomor KTP tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (nomorantrianValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Nomor Antrian tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}
+
+if (statusantrianValue === "") {
+    Swal.fire({
+    icon: 'error',
+    title: 'Status Antrian tidak boleh kosong!',
+    text: '',
+    showConfirmButton: false,
+    timer: 2000
+    });
+    cek = false;
+}  
+
+    let data = {
+        poli :{
+            kode_poliklinik: kodepoliklinikValue,
+            nama_poliklinik: namapoliklinikValue,
         },
-        identitas_pasien: {
-          _id: namapasienValue,
-          nama_pasien: namapasienText,
-          nomor_ktp: noktpValue,
-          nomor_telepon: noteleponValue,
-        },
+        identitas_pasien :{
+            nama_pasien: namapasienValue,
+            nomor_ktp: nomorktpValue, 
+            nomor_telepon: nomorteleponValue, 
+        },               
         nomor_antrian: nomorantrianValue,
-        status_antrian: statusantrianValue,
-      };
-      console.log(data);
-      putData(urlPUT, data, AmbilResponse);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+        status_antrian: statusantrianValue
+    };
+    putData(urlPUT, data, AmbilResponse);
+
 }
 
 onClick("button", pushData);

@@ -2,19 +2,24 @@ import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPUT, AmbilResponse} from "../config/url_put-antrian.js";
 
-async function getpoliData(poliklinikId) {
-    const timeoutDuration = 5000; // Waktu timeout dalam milidetik (misalnya, 5000 ms = 5 detik)
-    
-    // Fetch school data based on the ID (replace with your API endpoint)
-    const responsePromise = fetch(`https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`);
-    
-    const timeoutPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        reject(new Error('Request timed out.'));
-      }, timeoutDuration);
-    });
-    
-    const response = await Promise.race([responsePromise, timeoutPromise]);
+async function fetchWithTimeout(url, options, timeout = 6000) {
+    const controller = new AbortController();
+    const timeoutPromise = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Request timeout')), timeout)
+    );
+  
+    const responsePromise = fetch(url, { ...options, signal: controller.signal });
+  
+    return Promise.race([responsePromise, timeoutPromise])
+      .then((response) => {
+        controller.abort();
+        return response;
+      });
+  }
+  
+  async function getpoliData(poliklinikId) {
+    const url = `https://dimasardnt6-ulbi.herokuapp.com/poliklinik/${poliklinikId}`;
+    const response = await fetchWithTimeout(url);
     
     if (response.ok) {
       return response.json();
@@ -23,20 +28,9 @@ async function getpoliData(poliklinikId) {
     }
   }
   
-
   async function getpasienData(pasienId) {
-    const timeoutDuration = 5000; // Waktu timeout dalam milidetik (misalnya, 5000 ms = 5 detik)
-    
-    // Fetch patient data based on the ID (replace with your API endpoint)
-    const responsePromise = fetch(`https://dimasardnt6-ulbi.herokuapp.com/pasien/${pasienId}`);
-    
-    const timeoutPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        reject(new Error('Request timed out.'));
-      }, timeoutDuration);
-    });
-    
-    const response = await Promise.race([responsePromise, timeoutPromise]);
+    const url = `https://dimasardnt6-ulbi.herokuapp.com/pasien/${pasienId}`;
+    const response = await fetchWithTimeout(url);
     
     if (response.ok) {
       return response.json();
@@ -45,6 +39,7 @@ async function getpoliData(poliklinikId) {
     }
   }
   
+
 function pushData(){
     let kodepoliklinikValue = getValue("kode_poliklinik");
     let namapoliklinikValue = getValue("nama_poliklinik");

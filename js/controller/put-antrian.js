@@ -88,4 +88,4 @@ function pushData(){
     });
     }
 
-onClick("buttonAntrian", pushData);
+onClick("button", pushData);

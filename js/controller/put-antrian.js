@@ -28,7 +28,7 @@ function pushData(){
     let namapasienValue = getValue("nama_pasien");
     let nomorktpValue = getValue("nomor_ktp");
     let nomorteleponValue = getValue("nomor_telepon");
-    let nomorantrianValue = getValue("nomor_antrian");
+    let nomorantrianValue = parseInt(getValue("nomor_antrian"));
     let statusantrianValue = getValue("status_antrian");
 
    // form validation

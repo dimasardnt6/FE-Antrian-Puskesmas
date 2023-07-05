@@ -13,6 +13,7 @@ function isiRow(value) {
             .replace("#NOANTRIAN#", value.nomor_antrian)
             .replace("#TANGGALDAFTAR#", value.tanggal_pendaftaran)
             .replace("#IDEDIT#", value._id)
+            .replace("#IDDETAIL#", value._id)
             .replace("#IDHAPUS#", value._id)
             .replace("#STATUS#", value.status_antrian)
         addInner("iniTabel", content);

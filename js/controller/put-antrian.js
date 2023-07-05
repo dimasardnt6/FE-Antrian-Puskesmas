@@ -24,16 +24,27 @@ async function getpoliData(poliklinikId) {
   }
   
 
-async function getpasienData(pasienId) {
-    // Fetch school data based on the ID (replace with your API endpoint)
-    const response = await fetch(`https://dimasardnt6-ulbi.herokuapp.com/pasien/${pasienId}`);
+  async function getpasienData(pasienId) {
+    const timeoutDuration = 5000; // Waktu timeout dalam milidetik (misalnya, 5000 ms = 5 detik)
+    
+    // Fetch patient data based on the ID (replace with your API endpoint)
+    const responsePromise = fetch(`https://dimasardnt6-ulbi.herokuapp.com/pasien/${pasienId}`);
+    
+    const timeoutPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error('Request timed out.'));
+      }, timeoutDuration);
+    });
+    
+    const response = await Promise.race([responsePromise, timeoutPromise]);
+    
     if (response.ok) {
-    return response.json();
+      return response.json();
     } else {
-    throw new Error("Failed to fetch pasien data.");
+      throw new Error("Failed to fetch pasien data.");
     }
-}
-
+  }
+  
 function pushData(){
     let kodepoliklinikValue = getValue("kode_poliklinik");
     let namapoliklinikValue = getValue("nama_poliklinik");

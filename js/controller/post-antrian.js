@@ -77,7 +77,7 @@ function pushData(){
                 nama_pasien: namapasienText,
                 nomor_ktp: noktpValue,
                 nomor_telepon: noteleponValue,
-                alamat: alamatValue,
+                jenis_kelamin: jeniskelaminValue,
             },
             status_antrian: statusantrianValue,
         };

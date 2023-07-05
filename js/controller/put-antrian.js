@@ -29,6 +29,7 @@ function pushData(){
     let namapasienValue = getValue("nama_pasien");
     let nomorktpValue = getValue("nomor_ktp");
     let nomorteleponValue = getValue("nomor_telepon");
+    let nomorantrianValue = getValue("nomor_antrian");
     let statusantrianValue = getValue("status_antrian");
 
    // form validation
@@ -77,6 +78,7 @@ Promise.all([getpoliData(kodepoliklinikValue,namapoliklinikValue), getpasienData
             nomor_ktp: noktpValue,
             nomor_telepon: noteleponValue,
         },
+        nomor_antrian: nomorantrianValue,
         status_antrian: statusantrianValue,
     };
     console.log(data);

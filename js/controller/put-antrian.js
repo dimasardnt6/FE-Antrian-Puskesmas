@@ -78,6 +78,7 @@ function pushData(){
                 nomor_ktp: noktpValue,
                 nomor_telepon: noteleponValue,
             },
+            nomor_antrian: nomorantrianValue,
             status_antrian: statusantrianValue,
         };
         console.log(data);

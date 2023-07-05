@@ -23,13 +23,12 @@ async function getpasienData(pasienId) {
 }
 
 function pushData(){
-
     let kodepoliklinikValue = getValue("kode_poliklinik");
     let namapoliklinikValue = getValue("nama_poliklinik");
     let namapasienValue = getValue("nama_pasien");
     let nomorktpValue = getValue("nomor_ktp");
     let nomorteleponValue = getValue("nomor_telepon");
-    let nomorantrianValue = parseInt.getValue("nomor_antrian");
+    let nomorantrianValue = getValue("nomor_antrian");
     let statusantrianValue = getValue("status_antrian");
 
    // form validation

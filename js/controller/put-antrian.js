@@ -31,8 +31,8 @@ function pushData(){
     let nomorteleponValue = getValue("nomor_telepon");
     let statusantrianValue = getValue("status_antrian");
 
-   // Form validation
-   if (kodepoliklinikValue === "" && namapoliklinikValue === "" && namapasienValue === "" && nomorktpValue === "" && nomorantrianValue === "" && statusantrianValue === "") {
+   // form validation
+   if (kodepoliklinikValue === "" && namapoliklinikValue === "" && namapasienValue === "" && nomorktpValue === "" && statusantrianValue === "") {
     Swal.fire({
     icon: 'error',
     title: 'Data tidak boleh kosong!',
@@ -41,61 +41,6 @@ function pushData(){
     timer: 2000
     });
     return;
-}
-
-if (kodepoliklinikValue === "") {
-    Swal.fire({
-    icon: 'error',
-    title: 'Kode Poliklinik tidak boleh kosong!',
-    text: '',
-    showConfirmButton: false,
-    timer: 2000
-    });
-    cek = false;
-}
-
-if (namapoliklinikValue === "") {
-    Swal.fire({
-    icon: 'error',
-    title: 'Nama Poliklinik tidak boleh kosong!',
-    text: '',
-    showConfirmButton: false,
-    timer: 2000
-    });
-    cek = false;
-}
-
-if (namapasienValue === "") {
-    Swal.fire({
-    icon: 'error',
-    title: 'Nama Pasien tidak boleh kosong!',
-    text: '',
-    showConfirmButton: false,
-    timer: 2000
-    });
-    cek = false;
-}
-
-if (nomorktpValue === "") {
-    Swal.fire({
-    icon: 'error',
-    title: 'Nomor KTP tidak boleh kosong!',
-    text: '',
-    showConfirmButton: false,
-    timer: 2000
-    });
-    cek = false;
-}
-
-if (nomorantrianValue === "") {
-    Swal.fire({
-    icon: 'error',
-    title: 'Nomor Antrian tidak boleh kosong!',
-    text: '',
-    showConfirmButton: false,
-    timer: 2000
-    });
-    cek = false;
 }
 
 if (statusantrianValue === "") {
@@ -107,7 +52,7 @@ if (statusantrianValue === "") {
     timer: 2000
     });
     cek = false;
-}  
+}   
 
 Promise.all([getpoliData(kodepoliklinikValue,namapoliklinikValue), getpasienData(namapasienValue,nomorktpValue,nomorteleponValue)])
 .then(([poliData, pasienData]) => {

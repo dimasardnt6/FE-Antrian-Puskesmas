@@ -5,11 +5,8 @@ export function isiData(results) {
       { id: 'nama_pasien', path: 'identitas_pasien._id' },
       { id: 'nomor_ktp', path: 'identitas_pasien.nomor_ktp' },
       { id: 'nomor_telepon', path: 'identitas_pasien.nomor_telepon' },
-      { id: 'jenis_kelamin', path: 'identitas_pasien.jenis_kelamin' },
       { id: 'nomor_antrian', path: 'nomor_antrian' },
       { id: 'status_antrian', path: 'status_antrian' },
-      { id: 'nama_dokter', path: 'poli.dokter.nama_dokter' },
-      { id: 'spesialisasi', path: 'poli.dokter.spesialisasi' },
     ];
   
     inputMapping.forEach(({ id, path, index, property }) => {

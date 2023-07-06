@@ -59,10 +59,13 @@ function pushData(){
       // Ekstrak nilai-nilai yang diperlukan dari data yang diambil
         let kodepoliText = poliData.kode_poliklinik;
         let namapoliValue = poliData.nama_poliklinik;
+        let namadokterValue = poliData.dokter.nama_dokter;
+        let spesialisasiValue = poliData.dokter.spesialisasi;
 
         let namapasienText = pasienData.nama_pasien;
         let noktpValue = pasienData.nomor_ktp;
         let noteleponValue = pasienData.nomor_telepon;
+        let jeniskelaminValue = pasienData.jenis_kelamin;
 
         // Bangun objek data
         let data = {
@@ -70,12 +73,17 @@ function pushData(){
                 _id: kodepoliklinikValue,
                 kode_poliklinik: kodepoliText,
                 nama_poliklinik: namapoliValue,
+                dokter:{
+                    nama_dokter: namadokterValue,
+                    spesialisasi: spesialisasiValue,
+                }
             },
             identitas_pasien:{
                 _id: namapasienValue,
                 nama_pasien: namapasienText,
                 nomor_ktp: noktpValue,
                 nomor_telepon: noteleponValue,
+                jenis_kelamin: jeniskelaminValue,
             },
             nomor_antrian: nomorantrianValue,
             status_antrian: statusantrianValue,

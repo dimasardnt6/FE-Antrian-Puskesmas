@@ -24,6 +24,17 @@ function pushData(){
         return;
     }
     
+    if (namapasienValue === "") {
+        Swal.fire({
+        icon: 'error',
+        title: 'Nama Pasien tidak boleh kosong!',
+        text: '',
+        showConfirmButton: false,
+        timer: 2000
+        });
+        cek = false;
+    }
+
     if (nomorktpValue === "") {
         Swal.fire({
         icon: 'error',

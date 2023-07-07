@@ -76,7 +76,7 @@ function isiRow5(value) {
 }
 
 export function isiTableAntrianUser(results) {
-    results.forEach(isiRow6);
+    results.reverse().forEach(isiRow6);
 }
 function isiRow6(value) {
     let content =
